@@ -92,6 +92,13 @@ function initFormHandler() {
 		recipes.push(recipeObject);
 		saveRecipesToStorage(recipes);
 	});
+
+	const clearButton = document.querySelector(".danger");
+	clearButton.addEventListener("click", () => {
+		localStorage.clear();	
+		const mainElement = document.querySelector("main");
+		mainElement.innerHTML = "";
+	});
 	// Steps B4-B9 will occur inside the event listener from step B3
 	// B4. TODO - Create a new FormData object from the <form> element reference above
 	// B5. TODO - Create an empty object (we'll refer to this object as recipeObject to
